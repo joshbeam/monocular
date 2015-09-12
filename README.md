@@ -1,6 +1,10 @@
 # Monocular
 
-Get a live peek into San Francisco landmarks. Know before you go.
+### Get a live peek into San Francisco landmarks. Know before you go.
+
+<a href="https://www.flickr.com/photos/joshwashere/20601231244/in/dateposted-public/" title="Hippie Haven"><img src="https://farm1.staticflickr.com/613/20601231244_83b85ba7a5.jpg" width="500" height="333" alt="Hippie Haven"></a>
+
+*Delores Park*
 
 Features:
 
@@ -11,4 +15,4 @@ Features:
 
 ---
 
-&copy; 2015 Josh Beam - MIT License talk@joshbe.am
+&copy; 2015 Josh Beam - MIT License | talk@joshbe.am | www.joshbe.am
