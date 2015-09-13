@@ -1,5 +1,3 @@
-require('ratchet/dist/css/ratchet.min.css');
-
 import config from '../config-local.js';
 import React from 'react';
 import Router from 'react-router';
