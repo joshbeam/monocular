@@ -1,5 +1,4 @@
 import React from 'react';
-require('ratchet/dist/js/ratchet.min.js');
 import { Card, Header, Slider } from '../ratchet';
 
 export default class extends React.Component {
