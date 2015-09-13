@@ -1,25 +1,44 @@
 import React from 'react';
-import { Card, Header, Slider } from '../ratchet';
+import { Card, Header, Slider, TableViewMedia } from '../ratchet';
 import Api from '../../data';
 
 export default class extends React.Component {
   componentWillMount() {
+    this.state = {
+      landmarks: null
+    };
+
     new Api().get('landmarks')
-    .then((res) => {
-      console.log(res);
+    .then((landmarks) => {
+      this.setState({ landmarks });
     });
   }
 
   render() {
-    let sliderChildren = [
-      <img src="http://globe-views.com/dcim/dreams/smile/smile-06.jpg" id="1" />,
-      <img src="http://images.clipartpanda.com/smile-clipart-aTqBqMBTM.jpeg" id="2" />
-    ];
+    let landmarks;
+    let table;
+
+    if(this.state.landmarks) {
+      landmarks = this.state.landmarks.map((landmark, i) => {
+        return {
+          src: landmark.photos[0].src,
+          title: landmark.name,
+          description: 'I love you',
+          navigate: true
+        };
+      });
+
+      table = (
+        <TableViewMedia children={landmarks} />
+      );
+    }
 
     return (
       <div>
         <Header title="Monocular" />
-        <Slider children={sliderChildren} />
+        <div className="content">
+          {table}
+        </div>
       </div>
     );
   }
