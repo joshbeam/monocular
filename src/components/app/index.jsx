@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Header, Slider, TableViewMedia } from '../ratchet';
+import moment from 'moment';
+import { Card, Header, Slider } from '../ratchet';
 import Api from '../../data';
 
 export default class extends React.Component {
@@ -16,29 +17,35 @@ export default class extends React.Component {
 
   render() {
     let landmarks;
-    let table;
 
     if(this.state.landmarks) {
       landmarks = this.state.landmarks.map((landmark, i) => {
-        return {
-          src: landmark.photos[0].src,
-          title: landmark.name,
-          description: 'I love you',
-          navigate: true
-        };
-      });
+        let images = landmark.photos.map((photo, i) => {
+          return (
+            <img src={photo.src} key={i} style={ {
+              margin: '0 auto',
+              display: 'block',
+              maxWidth: '100%',
+              maxHeight: '480px'
+            } } />
+          );
+        });
 
-      table = (
-        <TableViewMedia children={landmarks} />
-      );
+        return (
+          <div className="content-padded">
+            <h1 style={ { textTransform: 'capitalize' } }>{landmark.name.split('-').join(' ')}</h1>
+            <h5>{landmark.weather.main}, {Math.floor(landmark.weather.temp)}&deg; F</h5>
+            <h5>Latest photo added {moment(landmark.photos[0].date_taken).fromNow()} (showing {landmark.photos.length})</h5>
+            <Slider style={{ background: 'white' }} children={images} key={i} />
+          </div>
+        );
+      });
     }
 
     return (
       <div>
         <Header title="Monocular" />
-        <div className="content">
-          {table}
-        </div>
+        <div className="content">{landmarks}</div>
       </div>
     );
   }
