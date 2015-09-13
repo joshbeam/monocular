@@ -19,7 +19,8 @@ module.exports = {
         test: /\.js(x)?$/,
         loader: 'babel',
         exclude: /(node_modules)/
-      }
+      },
+      { test: /\.(eot|ttf|woff|svg|otf)/, loader: 'url-loader?limit=10000' },
     ]
   },
   resolve: {
