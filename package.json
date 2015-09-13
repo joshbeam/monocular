@@ -44,5 +44,5 @@
     "cordova-plugin-inappbrowser",
     "com.ionic.keyboard",
     "cordova-plugin-device"
-  ],
+  ]
 }

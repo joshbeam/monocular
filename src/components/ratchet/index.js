@@ -1,7 +1,8 @@
 require('ratchet/dist/js/ratchet.min.js');
 require('ratchet/dist/css/ratchet.min.css');
-// require('ratchet/dist/css/ratchet-theme-ios.min.css');
 
+import Card from './card.jsx';
 import Header from './header.jsx';
+import Slider from './slider.jsx';
 
-export { Header };
+export { Card, Header, Slider };
