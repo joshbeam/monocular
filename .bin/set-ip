@@ -1,0 +1,5 @@
+#!/bin/bash
+
+IP="$(ipconfig getifaddr en0)"
+
+sed -i "" "s/0.0.0.0/$IP/g" ./app/config-local.js

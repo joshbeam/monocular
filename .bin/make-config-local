@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Setting config-local.js IP address to $IP"
+
+cp ./app/config-example.js ./app/config-local.js
+
+./.bin/set-ip
