@@ -13,6 +13,10 @@ Features:
 - See an Instagram feed of the latest pictures of the landmark
 - See links to live webcams where available
 
+## Technical info
+
+- Built on <a href="http://www.reapp.io">Reapp</a> (using ES6 and React)
+
 ---
 
 &copy; 2015 Josh Beam - MIT License | talk@joshbe.am | www.joshbe.am
