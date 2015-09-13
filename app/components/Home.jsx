@@ -21,7 +21,8 @@ class Home extends React.Component {
         let title = landmark.name.split('-').join(' ');
 
         let children = [
-          <h5>photo taken {moment(landmark.photos[0].date_taken).fromNow()}</h5>,
+          <h5>{landmark.weather.main}, {Math.floor(landmark.weather.temp)}&deg;</h5>,
+          <h5>latest photo added {moment(landmark.photos[0].date_taken).fromNow()}</h5>,
           <img src={landmark.photos[0].src} width="100%" height="100%" />,
           <a href={landmark.photos[0].url}>source</a>
         ];
