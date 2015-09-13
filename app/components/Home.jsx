@@ -23,7 +23,7 @@ class Home extends React.Component {
         let children = [
           <h5>{landmark.weather.main}, {Math.floor(landmark.weather.temp)}&deg;</h5>,
           <h5>latest photo added {moment(landmark.photos[0].date_taken).fromNow()}</h5>,
-          <img src={landmark.photos[0].src} width="100%" height="100%" />,
+          <img src={landmark.photos[0].src} width="100%" height="100%" onClick={this.router().transitionTo.bind(null, 'landmark')} />,
           <a href={landmark.photos[0].url}>source</a>
         ];
 
