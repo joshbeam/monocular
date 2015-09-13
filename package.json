@@ -37,5 +37,12 @@
   "bugs": {
     "url": "https://github.com/joshbeam/monocular/issues"
   },
-  "homepage": "https://github.com/joshbeam/monocular#readme"
+  "homepage": "https://github.com/joshbeam/monocular#readme",
+  "cordovaPlugins": [
+    "org.apache.cordova.splashscreen",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-inappbrowser",
+    "com.ionic.keyboard",
+    "cordova-plugin-device"
+  ],
 }
