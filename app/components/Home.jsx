@@ -29,7 +29,7 @@ class Home extends React.Component {
     }
 
     return (
-      <ViewList {...this.props.viewListProps} disableScroll="false">
+      <ViewList {...this.props.viewListProps} disableScroll={false}>
         <View title="Monocular" isInViewList={true} offsetBottom="500">
           <p>Get a live peek into the major landmarks of San Francisco.</p>
 
