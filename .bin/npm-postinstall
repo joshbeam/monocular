@@ -1,0 +1,3 @@
+mkdir www
+cp ./src/index.html ./www/index.html
+./.bin/make-config-local

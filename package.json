@@ -1,0 +1,32 @@
+{
+  "name": "monocular",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "webpack": "^1.12.1"
+  },
+  "devDependencies": {
+    "napa": "^1.2.0"
+  },
+  "scripts": {
+    "install": "napa",
+    "postinstall": "./.bin/npm-postinstall"
+  },
+  "napa": {
+    "ratchet": "twbs/ratchet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshbeam/monocular.git"
+  },
+  "author": "Josh Beam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshbeam/monocular/issues"
+  },
+  "homepage": "https://github.com/joshbeam/monocular#readme"
+}
