@@ -19,9 +19,12 @@ class Home extends React.Component {
     if(this.state.landmarks) {
       landmarks = this.state.landmarks.map((landmark) => {
         let title = landmark.name.split('-').join(' ');
-        let img = <a href={landmark.photos[0].url}><img src={landmark.photos[0].src} /></a>
+        let children = [
+          <img src={landmark.photos[0].src} />,
+          <a href={landmark.photos[0].url}>source</a>
+        ];
 
-        return <Card key={landmark.name} title={title} children={img} />
+        return <Card key={landmark.name} title={title} children={children} />
       });
     }
 
