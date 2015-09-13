@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "jquery": "^2.1.4",
+    "moment": "^2.10.6",
     "react": "0.13.2",
     "reapp-kit": "^1.2.0"
   }

@@ -19,7 +19,9 @@ class Home extends React.Component {
     if(this.state.landmarks) {
       landmarks = this.state.landmarks.map((landmark) => {
         let title = landmark.name.split('-').join(' ');
+
         let children = [
+          <h5>photo taken {moment(landmark.photos[0].date_taken).fromNow()}</h5>,
           <img src={landmark.photos[0].src} width="100%" height="100%" />,
           <a href={landmark.photos[0].url}>source</a>
         ];

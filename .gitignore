@@ -1,5 +1,6 @@
 server_modules
 node_modules
+bower_components
 build
 .DS_Store
 npm-debug.log
