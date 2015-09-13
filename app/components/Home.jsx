@@ -1,6 +1,10 @@
 import { Reapp, React, NestedViewList, View, Button } from 'reapp-kit';
 
 class Home extends React.Component {
+  componentWillMount() {
+
+  }
+
   render() {
     return (
       <NestedViewList {...this.props.viewListProps}>
