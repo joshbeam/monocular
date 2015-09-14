@@ -5,13 +5,13 @@ export default class extends React.Component {
     let children = this.props.children.map((child, i) => {
       return (
         <div className="slide" key={i}>
-          {child}
+          {child.image}
         </div>
       );
     });
 
     return (
-      <div className="slider" id={this.props.id}>
+      <div className="slider" style={{ backgroundColor: 'white' }}>
         <div className="slide-group">
           {children}
         </div>

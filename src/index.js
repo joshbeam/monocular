@@ -15,8 +15,6 @@ let routes = (
     </Route>
 );
 
-console.log('hello!');
-
 function run() {
   Router.run(routes, function(Handler) {
     React.render(<Handler />, document.body);
