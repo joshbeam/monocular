@@ -1,6 +1,6 @@
 import React from 'react';
-import moment from 'moment';
 import { Card, Header, Slider } from '../ratchet';
+import LandmarkCard from './landmark-card.jsx';
 import Api from '../../data';
 
 export default class extends React.Component {
@@ -22,23 +22,19 @@ export default class extends React.Component {
       landmarks = this.state.landmarks.map((landmark, i) => {
         let images = landmark.photos.map((photo, i) => {
           return (
-            <img src={photo.src} key={i} style={ {
-              margin: '0 auto',
-              display: 'block',
-              maxWidth: '100%',
-              maxHeight: '480px'
-            } } />
+            {
+              image: (<img src={photo.src} key={i} style={{
+                        margin: '0 auto',
+                        display: 'block',
+                        maxWidth: '100%',
+                        maxHeight: '480px'
+                      }} />),
+              title: landmark.name
+            }
           );
         });
 
-        return (
-          <div className="content-padded">
-            <h1 style={ { textTransform: 'capitalize' } }>{landmark.name.split('-').join(' ')}</h1>
-            <h5>{landmark.weather.main}, {Math.floor(landmark.weather.temp)}&deg; F</h5>
-            <h5>Latest photo added {moment(landmark.photos[0].date_taken).fromNow()} (showing {landmark.photos.length})</h5>
-            <Slider style={{ background: 'white' }} children={images} key={i} />
-          </div>
-        );
+        return <LandmarkCard landmark={landmark} images={images} key={i} />
       });
     }
 
