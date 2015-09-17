@@ -17,6 +17,7 @@ export default class extends React.Component {
 
   render() {
     let landmarks;
+    const loading = this.state.landmarks ? '' : 'Loading...';
 
     if(this.state.landmarks) {
       landmarks = this.state.landmarks.map((landmark, i) => {
@@ -41,7 +42,10 @@ export default class extends React.Component {
     return (
       <div>
         <Header title="Monocular" />
-        <div className="content">{landmarks}</div>
+        <div className="content">
+          {loading}
+          {landmarks}
+        </div>
       </div>
     );
   }
