@@ -3,6 +3,8 @@ import React from 'react';
 import Router from 'react-router';
 
 import App from './components/app';
+import Info from './components/info';
+import Feed from './components/feed';
 
 let {
   Route,
@@ -12,6 +14,8 @@ let {
 
 let routes = (
     <Route name="app" path="/" handler={App}>
+      <DefaultRoute name="feed" handler={Feed} />
+      <Route name="info" path="/info" handler={Info} />
     </Route>
 );
 

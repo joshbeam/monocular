@@ -7,8 +7,11 @@ export default class extends React.Component {
     let landmark = this.props.landmark;
     let images = this.props.images;
 
-    return (<div className="content-padded">
-      <h1 style={{ textTransform: 'capitalize' }}>{landmark.name.split('-').join(' ')}</h1>
+    return (<div className="content-padded" style={{ padding: '10px', boxShadow: '0 0 5px #ccc' }}>
+      <header className="bar-standard bar-header-secondary">
+        <a className="icon icon-right-nav pull-right"></a>
+        <h3 style={{ textTransform: 'capitalize' }}>{landmark.name.split('-').join(' ')}</h3>
+      </header>
       <div style={{ textTransform: 'uppercase' }}>
         <div className="badge badge-primary">
           {landmark.weather.main}, {Math.floor(landmark.weather.temp)}&deg; F
