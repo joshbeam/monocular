@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Header, Slider } from '../ratchet';
 import LandmarkCard from './landmark-card.jsx';
 import Api from '../../data';
-import { Link } from 'react-router';
+import moment from 'moment';
 
 export default class extends React.Component {
   componentWillMount() {
@@ -10,10 +10,14 @@ export default class extends React.Component {
       landmarks: null
     };
 
-    new Api().get('landmarks')
+    new Api().get('landmarks?num_photos=10')
     .then((landmarks) => {
       this.setState({ landmarks });
     });
+  }
+
+  showModal(data) {
+    console.log(true);
   }
 
   render() {
@@ -25,12 +29,18 @@ export default class extends React.Component {
         let images = landmark.photos.map((photo, i) => {
           return (
             {
-              image: (<img src={photo.src} key={i} style={{
+              image: (<div>
+                      <img src={photo.src} key={i} style={{
                         margin: '0 auto',
                         display: 'block',
                         maxWidth: '100%',
                         maxHeight: '480px'
-                      }} />),
+                      }} />
+                      <span className="badge badge-inverted">
+                        {moment(photo.date_taken).fromNow()}
+                      </span>
+                    </div>),
+
               title: landmark.name
             }
           );
@@ -41,7 +51,7 @@ export default class extends React.Component {
     }
 
     return (
-      <div>
+      <div onTap={this.showModal.bind(this)}>
         <Header title="Monocular" />
         <div className="content">
           {loading}
