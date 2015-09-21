@@ -12,9 +12,6 @@ export default class extends React.Component {
           <h3 style={{ textTransform: 'capitalize' }}>{landmark.name.split('-').join(' ')}</h3>
         </header>
         <div style={{ textTransform: 'uppercase' }}>
-          <div className="badge badge-primary">
-            {landmark.weather.main}, {Math.floor(landmark.weather.temp)}&deg; F
-          </div>
           <p style={{ textAlign: 'right' }}>
             {landmark.photos.length} photos
           </p>
@@ -24,3 +21,9 @@ export default class extends React.Component {
     );
   }
 };
+
+/**
+          <div className="badge badge-primary">
+            {landmark.weather.main}, {Math.floor(landmark.weather.temp)}&deg; F
+          </div>
+          **/

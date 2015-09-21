@@ -37,7 +37,7 @@ export default class extends React.Component {
                         maxHeight: '480px'
                       }} />
                       <span className="badge badge-inverted">
-                        {moment(photo.date_taken).fromNow()}
+                        {moment(+photo.date_taken).fromNow()}
                       </span>
                     </div>),
 
